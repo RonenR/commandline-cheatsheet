@@ -1,0 +1,10 @@
+# All these folders and subfolders named such recursively:
+node_modules/
+.idea/
+.firebase/
+no-git/
+build/
+
+
+**/package-lock.json
+.DS_Store
