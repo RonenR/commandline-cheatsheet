@@ -1,3 +1,14 @@
+# imagemagick:
+
+// Convert (for compression) all png files in folder to webp:
+
+    for i in *.png ; do convert "$i" "${i%.*}.webp" ; done
+    
+// Resize all images in folder to width 500px while keeping aspect ratio:
+
+    for i in *.webp ; do convert -resize 500x "$i" "${i%.*}_500x.webp" ; done
+
+
 # git:
 
 // Most recent commit:
