@@ -2,11 +2,11 @@
 
 // Clip input start
 
-ffmpeg -ss 6 -i original.mp4 trimmed.mp4
+    ffmpeg -ss 6 -i original.mp4 trimmed.mp4
 
 // Clip input end
 
-ffmpeg -t 120 -i original.mp4 trimmed.mp4
+    ffmpeg -t 120 -i original.mp4 trimmed.mp4
 
 // Clip both
 ffmpeg -ss 6 -t 120 -i original.mp4 trimmed.mp4
