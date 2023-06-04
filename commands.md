@@ -1,3 +1,28 @@
+# ffmpeg:
+
+// Clip input start
+
+ffmpeg -ss 6 -i original.mp4 trimmed.mp4
+
+// Clip input end
+
+ffmpeg -t 120 -i original.mp4 trimmed.mp4
+
+// Clip both
+ffmpeg -ss 6 -t 120 -i original.mp4 trimmed.mp4
+
+// Merge audio channels from video & audio output video that has merged audio from both inputs.
+
+    ffmpeg \
+        -i video.mp4 -i audio.mp3 \
+        -c:v copy \
+        -filter_complex " \
+            [0:a][1:a] amix=inputs=2:duration=longest [audio_out] \
+            " \
+        -map 0:v -map "[audio_out]" \
+        -y output.mp4
+    
+
 # imagemagick:
 
 // Convert (for compression) all png files in folder to webp:
