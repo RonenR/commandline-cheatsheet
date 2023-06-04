@@ -9,7 +9,8 @@
     ffmpeg -t 120 -i original.mp4 trimmed.mp4
 
 // Clip both
-ffmpeg -ss 6 -t 120 -i original.mp4 trimmed.mp4
+
+    ffmpeg -ss 6 -t 120 -i original.mp4 trimmed.mp4
 
 // Merge audio channels from video & audio output video that has merged audio from both inputs.
 
