@@ -24,6 +24,13 @@
         -y output.mp4
     
 
+// Create mp4 from audio & image:
+
+    ffmpeg -r 1 -loop 1 -y -i image.jpg -i audio.m4a -c:a copy -r 1 -vcodec libx264 -shortest video.avi
+    ffmpeg -i video.avi video.mp4
+    
+    
+
 # imagemagick:
 
 // Convert (for compression) all png files in folder to webp:
