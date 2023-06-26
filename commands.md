@@ -29,7 +29,25 @@
     ffmpeg -r 1 -loop 1 -y -i image.jpg -i audio.m4a -c:a copy -r 1 -vcodec libx264 -shortest video.avi
     ffmpeg -i video.avi video.mp4
     
+
+// Cut out video clips and merge 
+
+    ffmpeg -i source.mp4 -ss 9 -to 37 part1.mp4;
+    ffmpeg -i source.mp4 -ss 70 -to 107 part2.mp4;
+    ffmpeg -i source.mp4 -ss 136 -to 164 part3.mp4;
+    ffmpeg -i source.mp4 -ss 177 -to 197 part4.mp4;
+    ffmpeg -i source.mp4 -ss 208 -to 233 part5.mp4;
     
+    echo "file 'part1.mp4'" > filelist;
+    echo "file 'part2.mp4'" >> filelist;
+    echo "file 'part3.mp4'" >> filelist;
+    echo "file 'part4.mp4'" >> filelist;
+    echo "file 'part5.mp4'" >> filelist;
+    wait;
+    
+    ffmpeg -f concat -i filelist -c copy output.mp4;
+    rm filelist;
+
 
 # imagemagick:
 
