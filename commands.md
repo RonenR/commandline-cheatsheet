@@ -1,3 +1,8 @@
+# PDF combine concatenate 
+
+    gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=merged.pdf *.pdf
+
+
 # ffmpeg:
 
 // Clip input start
