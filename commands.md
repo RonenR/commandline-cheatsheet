@@ -34,7 +34,10 @@
     ffmpeg -r 1 -loop 1 -y -i image.jpg -i audio.m4a -c:a copy -r 1 -vcodec libx264 -shortest video.avi
     ffmpeg -i video.avi video.mp4
     
+// The following worked on 2024-08-01 to upload a media file to twitter:
 
+    ffmpeg -pattern_type glob -i as.jpg -i ks.mp3 -vcodec libx264 -s 640x480 -pix_fmt yuv420p movie.mp4
+    
 // Cut out video clips and merge 
 
     ffmpeg -i source.mp4 -ss 9 -to 37 part1.mp4;
